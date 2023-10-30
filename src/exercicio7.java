@@ -1,18 +1,24 @@
 public class exercicio7 {
-    public static void main(String[] args){
 
-        int[] numeros = {8, 7, 3, 6, 10, 28};
+    public static void main(String[] args) {
+        int[] numeros = {6, 12, 28, 9, 8, 8128, 13};
 
-        for (int i = 0; i < numeros.length; i++) {
-            if ( i > 1) {
+        for (int numero : numeros) {
+            if (ehNumeroPerfeito(numero)) {
+                System.out.println(numero + " é um número perfeito.");
+            }
+        }
+    }
+    public static boolean ehNumeroPerfeito(int numero) {
+        int somaDivisores = 1;
 
-            } else {
-
+        for (int i = 2; i <= numero / 2; i++) {
+            if (numero % i == 0) {
+                somaDivisores += i;
             }
         }
 
-
-
-
+        return somaDivisores == numero;
     }
 }
+
